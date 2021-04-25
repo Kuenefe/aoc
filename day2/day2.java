@@ -11,8 +11,7 @@ import java.nio.file.Paths;
 public class day2 {
     public static void main(String[] args) {
 
-        globalCounter("/home/cem/dev/advent/day2/input.txt");
-        
+        globalCounter("/home/cem/dev/advent/day2/input2.txt");
 
     }
 
@@ -27,7 +26,18 @@ public class day2 {
             return true;
         }
         return false;
+    }
 
+    public static boolean solvedAtPosition(String input, char searched, int start, int end) {
+
+        char begin = input.charAt(start);
+        char finish = input.charAt(end);
+
+
+        if (searched == begin|| searched == finish) {
+            return true;
+        }
+        return false;
     }
 
     public static int globalCounter(String path) {
@@ -50,9 +60,9 @@ public class day2 {
 
                 String word = bananSplit[3];
 
-                solved(word, letter, min, max);
+                solvedAtPosition(word, letter, min, max);
 
-                if (solved(word, letter, min, max)) {
+                if (solvedAtPosition(word, letter, min, max)) {
                     ruleAppliedCounter++;
                 }
             }
