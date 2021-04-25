@@ -30,8 +30,8 @@ public class day2 {
 
     public static boolean solvedAtPosition(String input, char searched, int start, int end) {
 
-        char begin = input.charAt(start);
-        char finish = input.charAt(end);
+        char begin = input.charAt(start+1);
+        char finish = input.charAt(end+1);
 
 
         if (searched == begin|| searched == finish) {
